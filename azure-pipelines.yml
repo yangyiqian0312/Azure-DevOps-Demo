@@ -20,11 +20,6 @@ steps:
   inputs:
     command: 'install'
     workingDir: 'client'
-
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'server'
   
 - task: Npm@1
   inputs:
@@ -36,7 +31,6 @@ steps:
   inputs:
     Contents: |
       client/dist/**
-      server/**
     TargetFolder: $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
