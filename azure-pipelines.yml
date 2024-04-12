@@ -17,6 +17,11 @@ steps:
 
 - task: Npm@1
   inputs:
+    command: 'custom'
+    workingDir: 'client'
+    customCommand: 'cache clean --force'
+- task: Npm@1
+  inputs:
     command: 'install'
     workingDir: 'client'
   displayName: 'Install Client Node.js'
